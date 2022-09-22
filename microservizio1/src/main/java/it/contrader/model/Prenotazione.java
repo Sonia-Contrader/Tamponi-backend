@@ -22,5 +22,4 @@ public class Prenotazione {
     @JoinColumn(name = "codiceFiscale")
     private Profilo codiceFiscale;
 
-
 }
