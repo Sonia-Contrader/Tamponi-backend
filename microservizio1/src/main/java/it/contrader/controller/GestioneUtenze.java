@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 
 @Slf4j
 @RestController
-@RequestMapping("/user")
+//@RequestMapping("/user")
 @CrossOrigin(origins = "*")
 public class GestioneUtenze {
 
