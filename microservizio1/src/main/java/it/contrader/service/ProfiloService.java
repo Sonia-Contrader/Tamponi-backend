@@ -17,6 +17,10 @@ public class ProfiloService {
     @Autowired
     ProfiloRepository profiloRepository;
 
+    public void deleteProfilo(Profilo profilo){
+        profiloRepository.delete(profilo);
+    }
+
     public List<ProfiloDTO> getProfili(){
         return profiloMapper.toProfileList((List<Profilo>) profiloRepository.findAll());
     }
@@ -24,4 +28,9 @@ public class ProfiloService {
     public ProfiloDTO insert(Profilo profilo){
         return profiloMapper.toUser(profiloRepository.save(profilo));
     }
+
+    public ProfiloDTO update(Profilo profilo){
+        return profiloMapper.toUser(profiloRepository.save(profilo));
+    }
+
 }

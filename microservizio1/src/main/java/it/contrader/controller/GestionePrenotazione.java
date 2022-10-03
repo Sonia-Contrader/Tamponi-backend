@@ -16,8 +16,12 @@ public class GestionePrenotazione {
     @Autowired
     PrenotazioneService service;
 
+    @DeleteMapping("/deletePrenotation")
+    public void deletePrenotazione(long id){
+        service.deletePrenotazione(id);
+    }
     @GetMapping("/prenotations")
-    public List<PrenotazioneDTO> getPrenotazioni (){
+    public List<PrenotazioneDTO> getPrenotazioni(){
         return service.getAllPrenotazioni();
     }
 
@@ -32,9 +36,9 @@ public class GestionePrenotazione {
         return service.insertPrenotazione(prenotazione);
     }
 
-    @DeleteMapping("/deletePrenotation")
-    public void deletePrenotazione(long id){
-        service.deletePrenotazione(id);
-    }
+   @PutMapping("/updatePrenotation")
+    public PrenotazioneDTO updatePrenotazione(@RequestBody Prenotazione prenotazione){
+        return service.updatePrenotazione(prenotazione);
+   }
 
 }

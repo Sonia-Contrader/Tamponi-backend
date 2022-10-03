@@ -28,4 +28,8 @@ public class PrenotazioneService {
     public void deletePrenotazione(long id){
         prenotazioneRepository.deleteById(id);
     }
+
+    public PrenotazioneDTO updatePrenotazione(Prenotazione prenotazione){
+        return prenotazioneMapper.toPrenotazione(prenotazioneRepository.save(prenotazione));
+    }
 }
