@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 
 @Slf4j
@@ -24,6 +25,11 @@ public class GestioneUtenze {
     @GetMapping("/get")
     public String home() throws IOException, InterruptedException {
         return "<h2>MICROSERVIZIO 1, ID ISTANZA: " + printHostname() + "</h2>";
+    }
+
+    @GetMapping("/users")
+    public List<UserDTO> getAll (){
+        return userService.getAll();
     }
 
     //POST React a UserDTO

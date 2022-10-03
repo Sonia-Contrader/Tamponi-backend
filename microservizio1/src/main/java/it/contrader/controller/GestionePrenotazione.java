@@ -4,9 +4,7 @@ import it.contrader.dto.PrenotazioneDTO;
 import it.contrader.model.Prenotazione;
 import it.contrader.service.PrenotazioneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -29,12 +27,12 @@ public class GestionePrenotazione {
         return list.stream().filter(x-> x.getDataPrenotazione().equals(date)).collect(Collectors.toList());
     }
 
-    @GetMapping("/insertPrenotation")
+    @PostMapping("/insertPrenotation")
     public PrenotazioneDTO insertPrenotazione(@RequestBody Prenotazione prenotazione){
         return service.insertPrenotazione(prenotazione);
     }
 
-    @GetMapping("/deletePrenotation")
+    @DeleteMapping("/deletePrenotation")
     public void deletePrenotazione(long id){
         service.deletePrenotazione(id);
     }

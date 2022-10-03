@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import java.time.LocalDate;
 
 @Data
@@ -21,4 +20,5 @@ public class ProfiloDTO {
     private String luogoDiNascita;
     private LocalDate dataDiNascita;
     private String numeroCI;
+
 }

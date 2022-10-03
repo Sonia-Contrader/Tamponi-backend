@@ -1,7 +1,6 @@
 package it.contrader.model;
 
 import javax.persistence.Entity;
-
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
